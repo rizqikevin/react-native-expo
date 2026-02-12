@@ -32,6 +32,7 @@ export default function Main() {
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri);
       setShowAppOptions(true);
+      setResetImage(false);
     } else {
       alert("You did not select any image");
     }
@@ -40,7 +41,7 @@ export default function Main() {
   const onReset = () => {
     setShowAppOptions(false);
     setSelectedImage(undefined);
-    setResetImage(false);
+    setResetImage(true);
     setPickedEmoji(undefined);
   };
 
@@ -58,7 +59,6 @@ export default function Main() {
 
   return (
     <GestureHandlerRootView>
-      {" "}
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <ImageViewer
@@ -89,11 +89,10 @@ export default function Main() {
               label="Choose a photo"
               onPress={pickImageAsync}
             />
-            <Button
+            {/* <Button
               label="Use this photo"
               onPress={() => setShowAppOptions(true)}
-              disabled={!selectedImage}
-            />
+            /> */}
           </View>
         )}
         <EmojiPicker isVisible={modalIsVisible} onClose={onModalClose}>
