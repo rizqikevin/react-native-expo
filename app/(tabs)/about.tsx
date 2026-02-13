@@ -5,12 +5,8 @@ export default function AboutScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>About Screen</Text>
-      <Link href="/main" style={styles.button}>
-        Goto Home Screen
-      </Link>
-
       <Link href="/" style={styles.button}>
-        Goto Main Menu
+        Goto Home Screen
       </Link>
     </View>
   );
